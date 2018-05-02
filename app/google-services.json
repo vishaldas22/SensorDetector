@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "224160043515",
+    "firebase_url": "https://sensor-detector.firebaseio.com",
+    "project_id": "sensor-detector",
+    "storage_bucket": "sensor-detector.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:224160043515:android:5bc1869103019c79",
+        "android_client_info": {
+          "package_name": "excel.com.sensordetector"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "224160043515-c0a5mmoqa47kiafnqspjn8npmgr1nj6h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "excel.com.sensordetector",
+            "certificate_hash": "6479531ae0a4e714c7ab5b9f0f53b230df2afdee"
+          }
+        },
+        {
+          "client_id": "224160043515-vn378r9haaedjujm8a1p0kb4i34cgqgd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBkFeGjjy0cn_UAjCHFgeol8lD9hUohXQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "224160043515-vn378r9haaedjujm8a1p0kb4i34cgqgd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

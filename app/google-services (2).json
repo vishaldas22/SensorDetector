@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "420412892501",
+    "firebase_url": "https://sensor-detector-850a5.firebaseio.com",
+    "project_id": "sensor-detector-850a5",
+    "storage_bucket": "sensor-detector-850a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420412892501:android:5bc1869103019c79",
+        "android_client_info": {
+          "package_name": "excel.com.sensordetector"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "420412892501-8uu3f6jjlv8oqsfc1784r287khcbousp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAN20el5GzP-eGuAYj9CvXadzszQRU8qw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

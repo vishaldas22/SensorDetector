@@ -1,0 +1,51 @@
+<RelativeLayout
+
+    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:padding="16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_date"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_time"
+        android:layout_toEndOf="@+id/tv_date"
+        android:layout_marginStart="5dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_temperature"
+        android:layout_toEndOf="@+id/tv_time"
+        android:layout_marginStart="5dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_humidity"
+        android:layout_toEndOf="@+id/tv_temperature"
+        android:layout_marginStart="5dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_distance"
+        android:layout_toEndOf="@+id/tv_humidity"
+        android:layout_marginStart="5dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_motion"
+        android:layout_toEndOf="@+id/tv_distance"
+        android:layout_marginStart="5dp"
+        />
+
+
+</RelativeLayout>
