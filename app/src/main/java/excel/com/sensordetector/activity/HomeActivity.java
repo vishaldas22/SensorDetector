@@ -101,25 +101,40 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-//    private void save()
-//    {
-//        File fileName = new File("myfile.txt");
-//        ArrayList<SensorModel> models = new ArrayList<>();
-//        adapter = new SensorAdapter(getApplicationContext(), models);
-//        List<SensorModel> list = adapter.getList();
-//
-//        try{
-//            FileWriter fw = new FileWriter(fileName);
-//            Writer output = new BufferedWriter(fw);
-//            int sz = list.size();
-//            for (int i = 0; i< sz; i++){
-//                output.write(list.get(i).toString() + "\n");
-//            }
-//            output.close();
-//        }catch (Exception e){
-//            Toast.makeText(HomeActivity.this, "File cannot be created", Toast.LENGTH_SHORT).show();
-//        }
-//    }
+    private void save()
+    {
+        String distance ;
+        String motion;
+        String temperature;
+
+        SensorModel sensorModel = new SensorModel();
+        distance = sensorModel.getDistance();
+        motion = sensorModel.getMotion();
+        temperature = sensorModel.getTemperature();
+
+        FileOutputStream fos = null;
+
+        try {
+            fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
+            fos.write(distance.getBytes());
+            fos.write(motion.getBytes());
+            fos.write(temperature.getBytes());
+            //mEditText.getText().clear();
+            Toast.makeText(this, "Saved to " + getFilesDir() + "/" + FILE_NAME, Toast.LENGTH_LONG).show();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fos != null) {
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
