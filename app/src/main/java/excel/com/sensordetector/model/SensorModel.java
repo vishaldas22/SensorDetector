@@ -69,6 +69,9 @@ public class SensorModel {
     }
 
     public String getTemperature() {
+        if (temperature == null || temperature.isEmpty()) {
+            return "0"; // we return 0 by default if we have nothing else to return
+        }
         return temperature;
     }
 
