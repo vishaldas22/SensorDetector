@@ -101,38 +101,24 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    private void save()
+    private void save(String filename, String content)
     {
-        String distance ;
-        String motion;
-        String temperature;
-
-        SensorModel sensorModel = new SensorModel();
-        distance = sensorModel.getDistance();
-        motion = sensorModel.getMotion();
-        temperature = sensorModel.getTemperature();
-
-        FileOutputStream fos = null;
+        String fileName = filename + ".txt";
+        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), fileName);
 
         try {
-            fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
-            fos.write(distance.getBytes());
-            fos.write(motion.getBytes());
-            fos.write(temperature.getBytes());
-            //mEditText.getText().clear();
-            Toast.makeText(this, "Saved to " + getFilesDir() + "/" + FILE_NAME, Toast.LENGTH_LONG).show();
-        } catch (FileNotFoundException e) {
+            FileOutputStream fos = new FileOutputStream(file);
+            fos.write(content.getBytes());
+            fos.close();
+            Toast.makeText(HomeActivity.this, "Saved", Toast.LENGTH_SHORT).show();
+        }
+        catch (FileNotFoundException e){
             e.printStackTrace();
-        } catch (IOException e) {
+            Toast.makeText(HomeActivity.this, "File not found", Toast.LENGTH_SHORT).show();
+        }
+        catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            if (fos != null) {
-                try {
-                    fos.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+            Toast.makeText(HomeActivity.this, "Error saving", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -153,7 +139,17 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             clearList();
         }
         else if (id == R.id.save){
-            //save();
+           SensorModel sensorModel = new SensorModel();
+            String distance = sensorModel.getDistance();
+            Log.d(TAG, "Distance is : " + distance);
+            String motion = sensorModel.getMotion();
+            String temperature = sensorModel.getTemperature();
+
+            String content = " distance : " + distance + "\n motion : " + motion + "\n temperature :" + temperature ;
+
+            String filename = "example";
+
+            save(filename, content);
         }
         return super.onOptionsItemSelected(item);
     }
